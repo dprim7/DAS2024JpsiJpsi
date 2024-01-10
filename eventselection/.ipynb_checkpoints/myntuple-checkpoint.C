@@ -77,8 +77,6 @@ void myntuple::Loop()
 			}
 			if (TrigNames->at(i).find("HLT_Dimuon0_Jpsi_Muon_") != string::npos && TrigRes->at(i) == 1) {
 				TrigThreeMuonJpsi = true;
-
-            
 			}
 		} //end of trigger loop
 
@@ -149,8 +147,6 @@ void myntuple::Loop()
 					// requiring all muons to come from the same vertex
 					&& (*MyFourMuonVtxCL)[myFourMuIdx] >= 0.005     
 					// Here add the selections! 
-					&& (TrigThreeMuonJpsi   //2016  Jpsi trigger, 2017B
-    					|| TrigThreeMuonJpsi3p5mu2)   //2017 & 2018 Jpsi trigger
 				) {
 				for (int mypidx = 0; mypidx < 3; mypidx++)  {
 					int muIdxp11, muIdxp12, muIdxp21, muIdxp22;
