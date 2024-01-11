@@ -165,12 +165,12 @@ void null_BW0(){
   
   // Parameters for Breit-Wigner (BW) - see formula in Twiki
   // and note that some of the parameters are floating while others are fixed
-  double massTh1Init = 6.33936e+00, massTh1Min = 6.20, massTh1Max = 6.50;
+  double massTh1Init = 6.5e+00, massTh1Min = 6.20, massTh1Max = 6.50;
   RooRealVar massTh1("massTh1", "massTh1", massTh1Init, massTh1Min, massTh1Max);
-  massTh1.setConstant(kFALSE); //m_0
-  double widthTh1Init = 3.53406e-01, widthTh1Min = 0.00, widthTh1Max = 1.50;
+  massTh1.setConstant(kTRUE); //m_0
+  double widthTh1Init = 9.63-01, widthTh1Min = 0.00, widthTh1Max = 1.50;
   RooRealVar widthTh1("widthTh1", "widthTh1", widthTh1Init, widthTh1Min, widthTh1Max);
-  widthTh1.setConstant(kFALSE); //Gamma_0
+  widthTh1.setConstant(kTRUE); //Gamma_0
   double LTh1Init = 0; // We assume S-wave
   RooRealVar LTh1("LTh1", "LTh1", LTh1Init);
   LTh1.setConstant(kTRUE);
@@ -194,7 +194,7 @@ void null_BW0(){
   RooRealVar w_g2("w_g2", "w_g2", 0.010042);
   RooRealVar beta("beta", "beta", 0.50989);
 
-  // Here we construct our function with the parameters defined above
+  // Here we construct our BW function with the parameters defined above
   MyRelBWSquare Th1("Th1", "Th1", mx,
       massTh1, widthTh1, LTh1, dTh1, coefTh1, phiTh1);
   // We also need to take into account detector smearing which affect the resolution of the peak

@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "null.C": "cpp"
+        "null.C": "cpp",
+        "null_BW0.C": "cpp"
     }
 }
